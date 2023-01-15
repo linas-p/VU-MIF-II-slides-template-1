@@ -1,13 +1,53 @@
 
 
- \begin{frame}[c]{Visualization}
- \begin{itemize}
-     \item XXX
- \end{itemize}
-     
- %{\includegraphics[width=1\textwidth]{imgs/XXX.jpg}};
+ \begin{frame}[c]{Visualization I}
+
+\begin{figure}
+    \includegraphics[width=1\textwidth]{img/sample1.png}
+\end{figure}
+
 
      
  \end{frame}
 
 
+ \begin{frame}[c]{Visualization II}
+    \begin{figure}
+\begin{tikzpicture}
+    \node[inner sep=0pt] (A) at (0,0)
+        {\includegraphics[width=.25\textwidth]{img/sample1.png}};
+    \node[inner sep=0pt] (B) at (5,-4)
+        {\includegraphics[width=.25\textwidth]{img/sample1.png}};
+
+    \draw[<->,thick] (A.south east) -- (B.north west)
+        node[midway,fill=white] {Some arrow};
+
+    \node (A) at (6,0) {\(\displaystyle\left|
+            \frac{
+              \left(\sum_{i=1}^n a_i^2\right) \cdot
+              \left(\sum_{i=1}^n b_i^2\right)
+            }{ (\sum_{i=1}^n \underbrace{a_ib_i}_{\subnode{brace}{}})^2} \right| \geq 1\)};
+
+\end{tikzpicture}   
+\end{figure}        
+\end{frame}
+   
+\begin{frame}[c]{Visualization III}
+
+        
+    \begin{minipage}[t]{0.49\textwidth}
+        \begin{itemize}
+            \item XXX
+            \item XXX
+            \item XXX
+        \end{itemize}
+        \end{minipage}
+        \begin{minipage}[t]{0.49\textwidth}
+            \begin{figure}
+                \includegraphics[width=1\textwidth]{img/sample1.png}
+            \end{figure}
+        \end{minipage}
+
+    
+        
+\end{frame}
