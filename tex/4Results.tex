@@ -51,3 +51,22 @@
     
         
 \end{frame}
+
+
+\begin{frame}[fragile]{Visualization IV}
+
+\begin{figure}[h!] 
+\begin{animateinline}[autoplay,loop]{6}
+\multiframe{3}{i=1+1}{	% {upper_index}{iterate + 1}
+	 \begin{tikzpicture}[scale = 0.99]
+	 	%\pgfmathsetmacro\c{\i+0} % c can be new variable of indexing
+	    \node at (-8, 0) {\i};
+		\node[inner sep=0pt] (A) at (0,0)
+        {\includegraphics[width=.75\textwidth]{img/sample\i.png}};
+	\end{tikzpicture}%   
+}
+\end{animateinline}
+\end{figure}
+
+\end{frame}
+ 
