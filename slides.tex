@@ -1,27 +1,4 @@
-\documentclass[aspectratio=169]{beamer}
-
-\setbeamertemplate{frametitle}[default][center] % 
-
-\usetheme{Madrid}
-\useinnertheme{circles}
-
-\definecolor{UBCblue}{rgb}{0.4823, 0.0, 0.2471} % VU (primary)
-\definecolor{UBCgrey}{rgb}{0.8627, 0.8627, 0.8627} % VU (secondary)
-
-%R:123 G:0 B:63
-
-\setbeamercolor{palette primary}{bg=UBCblue,fg=white}
-\setbeamercolor{palette secondary}{bg=UBCblue,fg=white}
-\setbeamercolor{palette tertiary}{bg=UBCblue,fg=white}
-\setbeamercolor{palette quaternary}{bg=UBCblue,fg=white}
-\setbeamercolor{structure}{fg=UBCblue} % itemize, enumerate, etc
-\setbeamercolor{section in toc}{fg=UBCblue} % TOC sections
-
-% Override palette coloring with secondary
-\setbeamercolor{subsection in head/foot}{bg=UBCgrey,fg=white}
-
-
-\usepackage[utf8x]{inputenc}
+\documentclass{VUMIFSlides}
 \usepackage{times}
 \usepackage[T1]{fontenc}
 \usepackage{color}
@@ -32,69 +9,34 @@
 \usepackage{amsfonts}
 \usepackage{float}
 \usepackage{hyperref}
-\usepackage{tikz}
 \usepackage{textpos} % FOR LOGO
 \usepackage[english,lithuanian]{babel}
 \usepackage{animate}
-\usepackage{tabularx,booktabs}
-
-\setbeamertemplate{caption}[numbered]{}% Number 
-
 \usepackage{caption} 
-
 \usepackage{subfig}
 
-\providecommand{\btVFill}{\vskip0pt plus 1filll}
-
-\newcommand{\todo}[1]{\textcolor{red}{//\textbf{TODO: {#1}}} }
-
-\newcommand{\eng}[1] {(angl. \textit{#1})}
-\newcommand{\engp}[2] {(angl. \textit{#1}, toliau: #2)}
-
-\usetikzlibrary{matrix,shapes,arrows,fit,tikzmark}
-\newcolumntype{.}{D{.}{.}{-1}}
-
-% Some options common to all the nodes and paths
-\tikzset{   
-        every picture/.style={remember picture,baseline},
-        every node/.style={anchor=base,align=center,outer sep=1.5pt},
-        every path/.style={thick},
-        }
-
-\newcommand\marktopleft[1]{%
-    \tikz[overlay,remember picture] 
-        \node (marker-#1-a) at (.1em,.3em) {};%
-}
-\newcommand\markbottomright[1]{%
-    \tikz[overlay,remember picture] 
-        \node (marker-#1-b) at (.1em,.3em) {};%
-    \tikz[overlay,remember picture,inner sep=3pt]
-        \node[draw=red,rounded corners,fit=(marker-#1-a.north west) (marker-#1-b.south east)] {};%
+\hypersetup{
+    pdfauthor=Vardenis Pavardenis,
+    linktoc=all,     %set to all if you want both sections and subsections linked
 }
 
-\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\title[Title lower]{Title title}
+\subtitle{Presentation}
+\author[Author lower]{\texorpdfstring{Author: \\ Supervisor: assoc. prof. Linas Petkevičius}{Author: , Supervisor: assoc. prof. Linas Petkevičius}} 
+\institute[VU-MIF]{Vilnius University \\ Faculty of Mathematics and Informatics \\ Institute of Computer Science}
+\date[2023-lower-XXX]{2023-title-XXX}
 
-% Content
-\input{tex/0start}
+\bibliography{bib}
 
 % Let's get started
 \begin{document}
 
-\addtobeamertemplate{frametitle}{}{%
-\begin{textblock*}{100mm}(.95\textwidth,-0.95cm)
-\includegraphics[height=1cm,width=1cm]{VU_Logo_pilkas.png}
-\end{textblock*}
-}
-
-%
 \begin{frame}
-  \titlepage
+  \maketitle
 \end{frame}
-%
-
 
 % Content
-\input{tex/00content}
+\input{tex/0content}
 % Introduction
 \input{tex/1RevisedGoals.tex}
 % Revised Dataset
@@ -104,12 +46,12 @@
 % Analysis results
 \input{tex/4Results}
 % Benefits / conclusion
-\input{tex/6Benefits}
-% To Do
- %\input{tex/5ToDo}
-
-%%
-
+\input{tex/5Benefits}
+% Bibliography
+\begin{frame}[allowframebreaks]{Bibliography}
+    \printbibliography 
+\end{frame}
+ 
 % \appendix
 
 \end{document}
